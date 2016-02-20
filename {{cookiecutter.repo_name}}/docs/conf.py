@@ -22,7 +22,9 @@ cwd = os.getcwd()
 parent = os.path.dirname(cwd)
 sys.path.append(parent)
 
+import cms_helper
 import {{ cookiecutter.app_name }}
+cms_helper.setup()
 
 # -- General configuration -----------------------------------------------------
 

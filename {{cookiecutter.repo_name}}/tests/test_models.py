@@ -1,19 +1,12 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-"""
-test_{{ cookiecutter.repo_name }}
-------------
-
-Tests for `{{ cookiecutter.repo_name }}` models module.
-"""
-
-from django.test import TestCase
+from __future__ import absolute_import, print_function, unicode_literals
 
 from {{ cookiecutter.app_name }} import models
 
+from .base import Base{{ cookiecutter.app_name|capitalize }}
 
-class Test{{ cookiecutter.app_name|capitalize }}(TestCase):
+
+class Test{{ cookiecutter.app_name|capitalize }}(Base{{ cookiecutter.app_name|capitalize }}):
 
     def setUp(self):
         pass

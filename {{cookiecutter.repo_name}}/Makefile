@@ -27,13 +27,14 @@ lint:
 	flake8 {{ cookiecutter.app_name }} tests
 
 test:
-	python runtests.py tests
+	python setup.py test
 
 test-all:
 	tox
 
 coverage:
-	coverage run --source {{ cookiecutter.app_name }} runtests.py tests
+	coverage erase
+	coverage run setup.py test
 	coverage report -m
 	coverage html
 	open htmlcov/index.html
