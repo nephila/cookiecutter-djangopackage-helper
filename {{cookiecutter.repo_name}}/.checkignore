@@ -1,0 +1,3 @@
+tests/*
+docs/*
+{{cookiecutter.app_name}}/migrations/*

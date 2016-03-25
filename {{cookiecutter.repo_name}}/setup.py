@@ -56,6 +56,7 @@ setup(
     ],
     license="BSD",
     zip_safe=False,
+    test_suite='cms_helper.run',
     keywords='{{ cookiecutter.repo_name }}',
     classifiers=[
         'Development Status :: 3 - Alpha',

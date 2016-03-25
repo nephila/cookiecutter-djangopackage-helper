@@ -45,9 +45,13 @@ Install {{ cookiecutter.project_name }}::
 
     pip install {{ cookiecutter.repo_name }}
 
-Then use it in a project::
+Then add to ``INSTALLED_APPS``::
 
-    import {{ cookiecutter.app_name }}
+    INSTALLED_APPS = [
+        ...
+        '{{ cookiecutter.app_name }}',
+        ...
+    ]
 
 Features
 --------
@@ -63,7 +67,7 @@ Does the code actually work?
 
     source <YOURVIRTUALENV>/bin/activate
     (myenv) $ pip install -r requirements-test.txt
-    (myenv) $ python runtests.py
+    (myenv) $ python setup.py test
 
 Credits
 ---------
