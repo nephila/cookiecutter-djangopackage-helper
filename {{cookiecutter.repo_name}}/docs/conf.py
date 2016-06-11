@@ -26,6 +26,15 @@ import cms_helper
 import {{ cookiecutter.app_name }}
 cms_helper.setup()
 
+import sphinx.environment
+from docutils.utils import get_source_line
+
+
+def _warn_node(self, msg, node, *args, **kwargs):
+    if not msg.startswith('nonlocal image URI found:'):
+        self._warnfunc(msg, '%s:%s' % get_source_line(node))
+
+sphinx.environment.BuildEnvironment.warn_node = _warn_node
 # -- General configuration -----------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -49,7 +58,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'{{ cookiecutter.project_name }}'
-copyright = u'{{ cookiecutter.year }}, {{ cookiecutter.full_name }}'
+copyright = u'{% now 'local', '%Y' %}, {{ cookiecutter.full_name }}'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

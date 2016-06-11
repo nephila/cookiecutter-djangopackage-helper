@@ -18,6 +18,10 @@ develop-eggs
 lib
 lib64
 
+# Created during tests
+.cache/
+dj_package/
+
 # Installer logs
 pip-log.txt
 
@@ -43,3 +47,4 @@ docs/_build
 
 # Cookiecutter
 output/
+dj-package/

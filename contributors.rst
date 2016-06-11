@@ -1,10 +1,13 @@
-Contributors
-============
+cookiecutter-djangopackage-helper original authors
+==================================================
 
 * Iacopo Spalletti
 
 cookiecutter-djangopackage original authors
 -------------------------------------------
+
+Leads
+-----
 
 * Daniel Roy Greenfeld / @pydanny
 * Audrey Roy Greenfeld / @audreyr
