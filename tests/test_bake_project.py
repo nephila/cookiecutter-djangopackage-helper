@@ -58,8 +58,8 @@ def test_readme(cookies):
 
         readme_file = result.project.join('README.rst')
         readme_lines = [x.strip() for x in readme_file.readlines(cr=False)]
-        assert 'Then use it in a project::' in readme_lines
-        assert '(myenv) $ pip install -r requirements_test.txt' in readme_lines
+        assert 'Then add to ``INSTALLED_APPS``::' in readme_lines
+        assert '(myenv) $ pip install -r requirements-test.txt' in readme_lines
 
 
 def test_models(cookies):
@@ -69,7 +69,6 @@ def test_models(cookies):
         model_file = result.project.join('cookies', 'models.py')
         model_txt = model_file.read()
         assert 'TimeStampedModel' in model_txt
-
 
 
 def test_views_with_models(cookies):
@@ -85,6 +84,17 @@ def test_views_with_models(cookies):
         for view in views:
             assert 'Pug{}'.format(view) in views_file_txt
             assert 'Dog{}'.format(view) in views_file_txt
+
+
+def test_helper_file(cookies):
+    """
+    Test case to assert if the helper file is created
+    """
+    extra_context = {'app_name': 'cookies'}
+    with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
+        helper_file = result.project.join('helper.py')
+        helper_file_txt = helper_file.read()
+        assert 'run(\'{}\')'.format('cookies') in helper_file_txt
 
 
 def test_views_without_models(cookies):
@@ -146,6 +156,7 @@ def test_authors(cookies):
         authors_file = result.project.join('AUTHORS.rst')
         authors_text = authors_file.read()
         assert 'Cookie McCookieface' in authors_text
+
 
 def test_manifest(cookies):
     extra_context = {'app_name': 'cookie_lover'}
