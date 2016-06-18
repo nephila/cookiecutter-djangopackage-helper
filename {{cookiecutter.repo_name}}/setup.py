@@ -65,7 +65,7 @@ setup(
     license="{{ cookiecutter.open_source_license }}",
 {%- endif %}
     zip_safe=False,
-    test_suite='cms_helper.run',
+    test_suite='helper.run',
     keywords='{{ cookiecutter.repo_name }}',
     classifiers=[
         'Development Status :: 3 - Alpha',

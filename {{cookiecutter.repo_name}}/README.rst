@@ -36,7 +36,7 @@
 Documentation
 -------------
 
-The full documentation is at https://{{ cookiecutter.repo_name }}.readthedocs.org.
+The full documentation is at https://{{ cookiecutter.repo_name }}.readthedocs.io.
 
 Quickstart
 ----------
@@ -59,7 +59,7 @@ Features
 * TODO
 
 Running Tests
---------------
+-------------
 
 Does the code actually work?
 
@@ -70,12 +70,12 @@ Does the code actually work?
     (myenv) $ python setup.py test
 
 Credits
----------
+-------
 
 Tools used in rendering this package:
 
 *  Cookiecutter_
-*  `cookiecutter-djangopackage`_
+*  `cookiecutter-djangopackage-helper`_
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`cookiecutter-djangopackage-helper`: https://github.com/nephila/cookiecutter-djangopackage-helper
